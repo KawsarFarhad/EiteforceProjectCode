@@ -1,0 +1,12 @@
+
+-- Enrollment fee adjustment --
+--check the current status 
+select EMP_ID, EMP_GIVEN_AMT, EMP_ADMISSION_FEE, EMP_ADMISSION_CONTACT_AMT, EMP_ADMISSION_FEE_DUES_AMT
+from emp_mst 
+where emp_old_system_id = '117814';
+
+--update the current status using emp_id
+update emp_mst
+set EMP_GIVEN_AMT = 0,
+EMP_ADMISSION_FEE_DUES_AMT = 5000
+where emp_id = 24169;
